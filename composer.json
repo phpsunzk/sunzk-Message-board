@@ -1,0 +1,20 @@
+{
+  "name":"SUNZK PHP",
+  "description":"PHP Fremework",
+  "type":"fremwork",
+  "keywords":[
+    "php","PHP Fremework"
+  ],
+  "require": {
+    "php":">=5.3.0",
+    "filp/whoops":"*",
+    "symfony/var-dumper":"*",
+    "catfan/medoo":"*"
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  }
+}
