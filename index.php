@@ -9,7 +9,7 @@
 
 define('SUNZK',str_replace('\\','/',realpath('./')));
 define('CORE', SUNZK.'/core');//核心文件目录
-define('APP', SUNZK.'/APP');
+define('APP', SUNZK.'/App');
 define('DEBUG', true);
 define('MODULE','app');//为了文件规范
 

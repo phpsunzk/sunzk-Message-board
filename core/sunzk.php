@@ -3,6 +3,7 @@
 namespace core;
 
 use \core\lib\log;
+use \vendor\twig;
 /**
  * 
  */
@@ -55,13 +56,20 @@ class sunzk
 	}
 	public function display($file)
 	{
-		$file = APP . '/views/' . $file;
-		if (is_file($file)) {
+		//$file = APP . '/views/' . $file;
+
+
 			if (isset($this->assign)) {
-				extract($this->assign);
+                $loader = new \Twig_Loader_Filesystem(APP.'/views');
+                $twig = new \Twig_Environment($loader, array(
+                    'cache' =>SUNZK.'/log/twig',
+                    'debug'=>DEBUG
+                ));
+                $template=$twig->loadTemplate($file);
+                $template->display($this->assign?$this->assign:'');
 			}
-			include $file;
+			//include $file;
 		}
-	}
+
 
 }

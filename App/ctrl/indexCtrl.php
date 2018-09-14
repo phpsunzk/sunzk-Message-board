@@ -19,6 +19,7 @@ class indexCtrl extends \core\sunzk
 		$ret = $model->query($sql);
 		$data = $ret->fetchall();*/
 		$data = $model->select("sunzk",'*');
+		//dump($data);die;
 		$this->assign('data',$data);
 		$this->display("index.html");
 	}
